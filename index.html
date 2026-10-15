@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="portfolio-content" class="portfolio-unlocked">
+        <header>
+            <nav class="navbar">
+                <div class="nav-container">
+                    <a href="#home" class="logo">Dey<span>.dev</span></a>
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">🌙</button>
+                        <button id="menu-btn" class="menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="dashboard-container">            
+             
+                <div class="left-column">
+                    <!-- HERO SECTION -->
+                    <section id="home" class="hero-section">
+                        <div class="home-content">
+                            <div class="home-text">
+                                <span class="badge">Welcome to my portfolio</span>
+                                <h1>Hi, I'm <span class="highlight">Marc Andrei Perez</span></h1>
+                                <p class="subtitle">IT Student & Aspiring Frontend Developer</p>
+                                <div class="buttons">
+                                    <a href="#projects" class="btn primary-btn">Explore Projects</a>
+                                    <a href="#contact" class="btn secondary-btn">Contact me</a>
+                                </div>
+                            </div>
+                            <div class="home-image">
+                                <div class="img-wrapper">
+                                    <img src="profile.jpg" alt="Marc Andrei Perez Profile Image" class="profile-img">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                  
+                    <section id="skills" class="skills-section">
+                        <div class="section-header">
+                            <h2>My Skills</h2>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="container-S">
+                            <details class="S2-accordion" open>
+                                <summary class="skill-name">HTML <span>▼</span></summary>
+                                <p class="build">Structure & Semantics</p>
+                            </details>
+
+                            <details class="S2-accordion" open>
+                                <summary class="skill-name">CSS <span>▼</span></summary>
+                                <p class="build">Styling, Layouts & Animation</p>
+                            </details>
+
+                            <details class="S2-accordion" open>
+                                <summary class="skill-name">Problem Solving <span>▼</span></summary>
+                                <p class="build">Analytical & Logical Thinking</p>
+                            </details>
+
+                            <details class="S2-accordion" open>
+                                <summary class="skill-name">Teamwork <span>▼</span></summary>
+                                <p class="build">Collaboration & Communication</p>
+                            </details>
+                        </div> 
+                    </section>
+
+                    
+                    <section class="verse-section">
+                        <div class="verse-card">
+                            <span class="verse-icon">📖</span>
+                            <h4>Verse of the Day</h4>
+                            <p class="verse-text">"But seek first his kingdom and his righteousness, and all these things will be given to you as well."</p>
+                            <span class="verse-ref">— Matthew 6:33</span>
+                        </div>
+                    </section>
+                </div>
+
+               
+                <div class="right-column">
+                 
+                    <section id="about" class="about-section">
+                        <div class="section-header">
+                            <h2>About Me</h2>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="about-grid">
+                            <details class="about-card-accordion" open>
+                                <summary><h3>My Personal Info <span>▼</span></h3></summary>
+                                <p>I'm a second-year college student pursuing a degree in Information Technology, with a strong passion for web development and a genuine interest in learning new technologies.</p>
+                            </details>
+                            
+                            <details class="about-card-accordion" open>
+                                <summary><h3>Location & Education <span>▼</span></h3></summary>
+                                <ul class="edu-list">
+                                    <li><strong>Location/School: </strong>Bestlink College of the Philippines/Novaliches Quezon City</li>
+                                    <li><strong>College/Current: </strong> Bachelor of Science in Information Technology (BSIT) - 2nd Year College</li>
+                                    <li><strong>Senior High School: </strong> Information and Communications Technology (ICT)</li>
+                                    <li><strong>Junior High School & Elementary: </strong> Completed basic education with focus on foundational academic tracks.</li>
+                                </ul>
+                            </details>
+
+                            <details class="about-card-accordion" open>
+                                <summary><h3>Interests & Goals <span>▼</span></h3></summary>
+                                <p>Aspiring to create clean and functional websites, designing responsive user interfaces, and continuously expanding my technical knowledge in web development.</p>
+                            </details>
+                        </div>
+                    </section>
+
+                  
+                    <section id="projects" class="projects-section">
+                        <div class="section-header">
+                            <h2>Featured Projects</h2>
+                            <div class="underline"></div>
+                            <span class="project-subtitle-tag">PRELIM TO FINALS ACTIVITIES</span>
+                        </div>
+
+                        <div class="projects-grid">
+                            <div class="container-Projects">
+                                <div class="project-img-box">
+                                    <img src="WIN_20260209_08_27_23_Pro.jpg" alt="Homepage Project">
+                                </div>
+                                <h4>My Personal Webpage</h4>    
+                                <a href="homepage.html" class="project-link">View Project →</a>            
+                            </div>
+                            <div class="container-Projects">
+                                <div class="project-img-box">
+                                    <img src="sinigang bangus.jpg" alt="Dishes Project">
+                                </div>
+                                <h4 class="title-fix">My Dishes</h4>
+                                <a href="dishes.html" class="project-link">View Project →</a>
+                            </div>
+                            <div class="container-Projects">   
+                                <div class="project-img-box">
+                                    <img src="Cardstudent.jpeg" alt="Card Student Project">
+                                </div>
+                                <h4>Card Student</h4>
+                                <a href="card.html" class="project-link">View Project →</a>
+                            </div> 
+                            <div class="container-Projects">    
+                                <div class="project-img-box">
+                                    <img src="multi.avif" alt="Multimedia Page">
+                                </div>
+                                <h4>My Multimedia Page</h4>
+                                <a href="multi.html" class="project-link">View Project →</a>
+                            </div>   
+                            <div class="container-Projects">    
+                                <div class="project-img-box">
+                                    <img src="storybook.png" alt="Storybook Project">
+                                </div>
+                                <h4>My Storybooks</h4>
+                                <a href="storybook.html" class="project-link">View Project →</a>
+                            </div>    
+                            <div class="container-Projects">    
+                                <div class="project-img-box">
+                                    <img src="ITE-GROUP-PICS.jpg" alt="Teacher's Month Activity">
+                                </div>
+                                <h4>Teacher's Month</h4>
+                                <a href="teacher'smonth.html" class="project-link">View Project →</a>
+                            </div>    
+                        </div>
+                    </section> 
+                </div>
+            </div>
+            
+           
+            <div class="bottom-contact-container">
+                <section id="contact" class="contact-section">
+                    <div class="section-header center-header">
+                        <h2>Contact me</h2>
+                        <div class="underline center-underline"></div>
+                    </div>
+                    <div class="container-Contact center-contact-box">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <p><b>Gmail:</b> <a href="mailto:perez.marcandrei25@gmail.com">perez.marcandrei25@gmail.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <p><b>Contact No:</b> 09670890740</p>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <p><b>Facebook:</b> Marc Andrei Perez</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; I'm Marc Andrei Perez Project for ITE Subject.</p>
+            <button id="back-to-top" class="back-to-top-btn">Back to Top ↑</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
