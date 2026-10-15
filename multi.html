@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #1a1917;
+            color: #d1d1d6;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: azure;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .nav-container a {
+            color: #7ebe15;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-container a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            background-color: #242220;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(35, 243, 12, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(126, 190, 21, 0.2);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .content img {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 130px;
+            height: 170px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.03);
+        }
+
+        .track-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .track-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .track-item p, .video-item p {
+            margin: 0 0 8px 0;
+            font-weight: 500;
+            color: #f0f0f0;
+        }
+
+        audio {
+            width: 100%;
+            accent-color: #7ebe15;
+        }
+
+        .video-item {
+            margin-bottom: 25px;
+        }
+
+        .video-item:last-child {
+            margin-bottom: 0;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>My Multimedia Page</h2>
+    <hr>
+
+    <div class="container">
+        <div class="nav-container">
+            <a href="index.html#projects">← Back to Home</a>
+        </div>
+
+        <!-- Images Section -->
+        <div class="content">
+            <h3>My Favorite Image</h3>
+            <div class="image-grid">
+                <img src="photo1.jpg" alt="Photo 1"/>
+                <img src="photo2.jpg" alt="Photo 2"/>
+                <img src="photo3.jpg" alt="Photo 3"/>
+                <img src="photo4.jpg" alt="Photo 4"/>
+                <img src="photo5.jpg" alt="Photo 5"/>
+            </div>
+        </div>
+
+        <!-- Music List Section -->
+        <div class="content">
+            <h2>My Favorite Music List</h2>
+            
+            <div class="track-item">
+                <p>1. Heart of Worship by Hillsong</p>
+                <audio controls>
+                    <source src="Passion_Music_-_The_Heart_Of_Worship_CeeNaija.com_.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>    
+            </div>
+
+            <div class="track-item">
+                <p>2. Trust in God by Elevation</p>
+                <audio controls>
+                    <source src="Elevation-Choir-Trust-In-God-Elevation-Choir-(CeeNaija.com).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="track-item">
+                <p>3. GOODBYE YESTERDAY by Elevation Rhythm & Gracie Binion</p>
+                <audio controls>
+                    <source src="Valor_Chapel_Band_-_Goodbye_Yesterday_CeeNaija.com_.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="track-item">
+                <p>4. WASHED by Elevation Rhythm</p>
+                <audio controls>
+                    <source src="Grace-Church-Orlando-Washed-x-Trading-My-Sorrows-Yes-Lord-Grace-Church-Orlando-4K-(CeeNaija.com).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="track-item">
+                <p>5. How Great Is Our God cover by Genavieve Linkowski</p>
+                <audio controls>
+                    <source src="How-Great-Is-Our-God-Chris-Tomlin-cover-by-Genavieve-Linkowski-Anthem-Worship-Mass-Anthem-(CeeNaija.com).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <!-- Dream Travel Section -->
+        <div class="content">
+            <h2>My Dream Travel</h2>
+            
+            <div class="video-item">
+                <p>Mountain Range</p>
+                <video controls>
+                    <source src="mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-hd-ready.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <p>Highway in the Mountains</p>
+                <video controls>
+                    <source src="video_preview_h264.mp4" type="video/mp4">
+                    Your browser does not support the video tag.    
+                </video>
+            </div>
+
+            <div class="video-item">
+                <p>Man traveling by motorcycle on an empty road</p>
+                <video controls>
+                    <source src="mixkit-man-traveling-by-motorcycle-on-an-empty-road-39912-hd-ready.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <p>Walking a path that crosses a dense forest</p>
+                <video controls>
+                    <source src="mixkit-walking-a-path-that-crosses-a-dense-forest-41574-hd-ready.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <p>Boy running in a field and playing with a toy wooden airplane</p>
+                <video controls>
+                    <!-- Pwede mo itong palitan ng sarili niyang video file kung mayroon ka pa -->
+                    <source src="mixkit-boy-running-in-a-field.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
