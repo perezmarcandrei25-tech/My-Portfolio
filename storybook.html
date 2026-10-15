@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Book ni Dey</title>
+    <style>
+        /* Reset and General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f0c;
+            color: #e0f2fe;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(10, 15, 11, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 255, 128, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 255, 128, 0.05);
+        }
+
+        .container-back-home a {
+            color: #00ff80;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid rgba(0, 255, 128, 0.4);
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .container-back-home a:hover {
+            background-color: #00ff80;
+            color: #0b0f0c;
+            box-shadow: 0 0 12px rgba(0, 255, 128, 0.4);
+        }
+
+        .navbar h1 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00ff80;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #a3e6cb;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 12px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00ff80;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background: radial-gradient(circle at center, #112217 0%, #0b0f0c 70%);
+        }
+
+        .hero-content h2 {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #00ff80;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content button {
+            background-color: #00ff80;
+            color: #0b0f0c;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+        }
+
+        .hero-content button:hover {
+            background-color: #00cc66;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 255, 128, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .about-image img {
+            width: 180px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 255, 128, 0.15);
+            border: 1px solid rgba(0, 255, 128, 0.2);
+        }
+
+        .about-content h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #00ff80;
+        }
+
+        .about-content p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        /* Stories Section */
+        .stories {
+            text-align: center;
+            padding: 60px 20px 90px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .stories h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #00ff80;
+        }
+
+        .section-description {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        .story-card {
+            background-color: #121814;
+            border: 1px solid rgba(0, 255, 128, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 128, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 255, 128, 0.12);
+        }
+
+        .story-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 255, 128, 0.2);
+        }
+
+        .story-card h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .story-card p {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .story-card button {
+            background-color: transparent;
+            color: #00ff80;
+            border: 1px solid rgba(0, 255, 128, 0.4);
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .story-card button:hover {
+            background-color: #00ff80;
+            color: #0b0f0c;
+            box-shadow: 0 0 10px rgba(0, 255, 128, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container-back-home">
+            <a href="index.html#projects">← Back to Home</a>
+        </div>
+        <h1>Story Book ni Dey</h1>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#stories">Stories</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Step Into a World of Stories</h2>
+            <p>
+                Discover magical adventures, wonderful characters, 
+                and stories waiting to be explored.
+            </p>
+            <button onclick="document.getElementById('stories').scrollIntoView();">Explore Stories</button>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="storybook.png" alt="Storybook Image">
+        </div>
+        <div class="about-content">
+            <h2>About Our Storybook</h2>
+            <p>
+                Story Book is a collection of simple and inspiring 
+                stories created for readers who love imagination, 
+                adventure, and wonderful characters.
+            </p>
+            <p>
+                Choose a story and begin your next adventure.
+            </p>
+        </div>
+    </section>
+
+    <section class="stories" id="stories">
+        <h2>Featured Stories</h2>
+        <p class="section-description">
+            Choose a story and discover a new world.
+        </p>
+
+        <div class="story-container">
+            
+            <div class="story-card">
+                <img src="story1.jpg" alt="Charlotte's Web">
+                <h3>"Charlotte’s Web" by E.B. White</h3>
+                <p>
+                    A classic children’s story about friendship and life on a 
+                    farm, highlighting themes of loyalty and compassion.
+                </p>
+                <button>Read More</button>
+            </div>
+
+            <div class="story-card">
+                <img src="story2.jpg" alt="The Little Prince">
+                <h3>"The Little Prince" by Antoine de Saint-Exupéry</h3>
+                <p>
+                    A timeless tale that blends whimsy and philosophy, offering 
+                    insights on childhood, love, and human nature.
+                </p>
+                <button>Read More</button>
+            </div>
+
+             <div class="story-card">
+                <img src="story3.webp" alt="Matilda">
+                <h3>"Matilda" by Roald Dahl</h3>
+                <p>
+                    The story of a brilliant young girl with extraordinary abilities
+                    who overcomes challenges with courage and intelligence.
+                </p>
+                <button>Read More</button>
+            </div>
+            
+             <div class="story-card">
+                <img src="story4.jpg" alt="Where the Wild Things Are">
+                <h3>"Where the Wild Things Are" by Maurice Sendak</h3>
+                <p>
+                    A picture book that captures imagination and adventure as 
+                    a young boy journeys to an island of fantastical creatures.
+                </p>
+                <button>Read More</button>
+            </div>
+
+            <div class="story-card">
+                <img src="story5.jpg" alt="Harry Potter">
+                <h3>"Harry Potter and the Sorcerer’s Stone" by J.K. Rowling</h3>
+                <p>
+                    The first installment in the globally beloved series following a young wizard 
+                    discovering his magical heritage and destiny.
+                </p>
+                <button>Read More</button>
+            </div>
+
+            <div class="story-card">
+                <img src="story6.jpg" alt="Alice in Wonderland">
+                <h3>"Alice’s Adventures in Wonderland" by Lewis Carroll</h3>
+                <p>
+                    A whimsical, fantastical journey full of curious characters, riddles, and
+                    the imaginative possibilities of a dream-like world.
+                </p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
