@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Profile Cards</title>
+    <!-- Google Fonts para sa modernong hitsura -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Navigation Header */
+        header {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 20px;
+        }
+
+        .title h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .home {
+            background-color: #0f172a;
+            border: 2px solid #01fc48;
+            border-radius: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 18px;
+            box-shadow: 0 4px 12px rgba(1, 252, 72, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .home a {
+            text-decoration: none;
+            color: #01fc48;
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .home:hover {
+            background-color: #01fc48;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(1, 252, 72, 0.3);
+        }
+
+        .home:hover a {
+            color: #0f172a;
+        }
+
+        /* Grid Layout para sa mga Student Cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Base Card Styling na may Modern Accent Colors */
+        .card {
+            background-color: #ffffff;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Top Color Indicator bawat card */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .card-1::before { background-color: #06b6d4; }
+        .card-2::before { background-color: #22c55e; }
+        .card-3::before { background-color: #8b5cf6; }
+        .card-4::before { background-color: #ec4899; }
+        .card-5::before { background-color: #10b981; }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .card p span {
+            color: #334155;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body> 
+
+    <header>
+        <div class="title">
+            <h1>College Profile Cards</h1>
+        </div> 
+        <div class="home">
+            <a href="index.html#projects">← Back to Home</a>
+        </div>
+    </header>
+
+    <div class="cards-container">
+        <div class="card card-1">
+            <h3>Matrix Noche</h3>
+            <p>Student ID: <span>53535335</span></p>
+            <p>Program: <span>BSIT</span></p>
+        </div>
+        
+        <div class="card card-2">
+            <h3>Mendoza Gail</h3>
+            <p>Student ID: <span>57776565</span></p>
+            <p>Program: <span>BSIT</span></p>
+        </div>
+
+        <div class="card card-3">
+            <h3>Bacolod Dave</h3>
+            <p>Student ID: <span>96654543</span></p>
+            <p>Program: <span>BSIT</span></p>
+        </div>  
+
+        <div class="card card-4">
+            <h3>Bacaltos Rhoda</h3>
+            <p>Student ID: <span>4365775</span></p>
+            <p>Program: <span>BSIT</span></p>
+        </div>  
+
+        <div class="card card-5">
+            <h3>Buenavides Ray</h3>
+            <p>Student ID: <span>6547547</span></p>
+            <p>Program: <span>BSIT</span></p>
+        </div>
+    </div>
+
+</body>
+</html>

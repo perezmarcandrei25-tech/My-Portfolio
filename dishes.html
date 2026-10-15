@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinigang na Bangus Recipe</title>
+    <!-- Google Fonts para sa malinis na hitsura -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+            color: #1e293b;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Navigation Button */
+        nav {
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 25px;
+        }
+
+        .container-back-home {
+            background-color: #0f172a;
+            border: 2px solid rgb(0, 255, 153);
+            border-radius: 30px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0, 255, 153, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .container-back-home a {
+            text-decoration: none;
+            color: rgb(0, 255, 153);
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .container-back-home:hover {
+            background-color: rgb(0, 255, 153);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 153, 0.4);
+        }
+
+        .container-back-home:hover a {
+            color: #0f172a;
+        }
+
+        /* Main Recipe Wrapper Card */
+        .recipe-wrapper {
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 24px;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top accent line */
+        .recipe-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #10b981, #0284c7);
+        }
+
+        /* Title Style */
+        .recipe-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .recipe-title mark {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(3, 105, 161, 0.1);
+        }
+
+        /* Section Headings */
+        .section-heading {
+            color: #0284c7;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading::before {
+            content: '';
+            width: 8px;
+            height: 20px;
+            background-color: #10b981;
+            border-radius: 4px;
+        }
+
+        /* Ingredients List Design (Cards style) */
+        ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        ul li {
+            background-color: #f8fafc;
+            border: 1px solid #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        ul li:hover {
+            background-color: #f1f5f9;
+            transform: translateX(4px);
+        }
+
+        ul li mark {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Procedure List Design */
+        ol {
+            list-style: none;
+            counter-reset: step-counter;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        ol li {
+            counter-increment: step-counter;
+            position: relative;
+            padding: 14px 16px 14px 50px;
+            background-color: #f8fafc;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        ol li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Bottom Home Button */
+        .footer-action {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 25px;
+        }
+
+        .HP {
+            display: inline-block;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .HP:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+            background: linear-gradient(135deg, #0369a1, #075985);
+        }
+
+        /* Responsive Media Query */
+        @media (max-width: 600px) {
+            .recipe-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container-back-home">
+            <a href="index.html#projects">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="recipe-wrapper">
+        
+        <div class="recipe-title">
+            <h1>
+                <mark>TRADITIONAL FILIPINO Food</mark>
+            </h1>
+        </div>
+        
+        <h2 class="section-heading">INGREDIENTS</h2>
+        <ul>
+            <li><mark>Bangus:</mark> 1 large milkfish (about 500g–700g), scaled, gutted, and sliced into serving pieces</li>
+            <li><mark>Water or Rice Washing (Hugas-Bigas):</mark> 6 to 8 cups</li>
+            <li><mark>Souring Agent:</mark> 1 packet (22g–44g) tamarind mix (sinigang sa sampalok) or 1 cup fresh tamarind extract</li>
+            <li><mark>Tomatoes:</mark> 3 medium, quartered</li>
+            <li><mark>Onion:</mark> 1 medium, sliced</li>
+            <li><mark>Ginger:</mark> 1 thumb-sized, sliced</li>
+            <li><mark>Fish Sauce (Patis):</mark> 2 to 3 tablespoons (to taste)</li>
+            <li><mark>Finger Chillies (Siling Pansigang):</mark> 2 pieces</li>
+            <li><mark>Radish (Labanos):</mark> 1 medium, sliced into rounds</li>
+            <li><mark>Eggplant:</mark> 1 medium, sliced diagonally</li>
+            <li><mark>Yardlong Beans (Sitaw):</mark> 1 bundle, cut into 2-inch pieces</li>
+            <li><mark>Okra:</mark> 5 to 6 pieces</li>
+            <li><mark>Water Spinach (Kangkong):</mark> 1 bunch, leaves and tender stems separated</li>
+        </ul>
+
+        <h2 class="section-heading">PROCEDURE</h2>
+        <ol>
+            <li>Wash and prepare all the ingredients, ensuring the vegetables are sliced to bite-sized pieces.</li>
+            <li>In a pot, combine the water or rice washing (hugas-bigas), sliced tomatoes, onion, and ginger. Bring to a boil.</li>
+            <li>Reduce the heat and let the aromatics simmer for about 5 minutes to release their flavors.</li>
+            <li>Pour in the tamarind extract or tamarind powder mix, stirring well until dissolved.</li>
+            <li>Add the fish sauce (patis) to taste.</li>
+            <li>Gently drop in the bangus slices and finger chillies. Cover and simmer for 5 to 7 minutes until the fish is cooked through.</li>
+            <li>Add the harder vegetables first, such as the radish and yardlong beans (sitaw), and cook for 2 minutes.</li>
+            <li>Add the eggplant, okra, and water spinach (kangkong) stems, simmering for another 2 minutes.</li>
+            <li>Toss in the water spinach leaves, turn off the heat, and let the residual heat cook the leaves for about 1 minute.</li>
+            <li>Transfer to a serving bowl and serve hot with a side of white rice.</li>
+        </ol>
+
+        <div class="footer-action">
+            <a href="index.html" class="HP">Home</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
